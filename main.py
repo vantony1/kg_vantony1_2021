@@ -7,6 +7,17 @@ Created on Tue Mar 17 11:39:02 2020
 import sys
 
 def checkMapping(first, second):
+    """Function that checks for isomorphic one-to-one mapping in two strings
+
+    Args:
+        first (string): The first string.
+        second (string): The second string.
+    
+    Returns:
+        bool: True if mapping exists else False
+
+    """
+    
     if len(first) != len(second):
         return False 
     
@@ -24,6 +35,17 @@ def checkMapping(first, second):
     return True
     
 def result(arg1, arg2):
+    """Function that prints "true" or "false" dependent on response from checkMapping
+
+    Args:
+        arg1 (string): The first string.
+        arg2 (string): The second string.
+    
+    Returns:
+        None
+        
+    """
+    
     if(checkMapping(arg1, arg2) == True):
         print("true")
     else:
