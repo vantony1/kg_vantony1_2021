@@ -2,29 +2,27 @@
 """
 Created on Tue Mar 17 11:39:02 2020
 
-@author: Victor Antony
+@author: victo
 """
 import sys
 
 def checkMapping(first, second):
     if len(first) != len(second):
-        return false 
+        return False 
     
-    mappedFirst = set()
-    mappedSecond = set()
     mapping = {}
     
     for i in range(len(first)):
         a = first[i]
         b = second[i]
-        if a in mappedFirst:
-            return False
+        if a in mapping:
+            if mapping[a] != b:
+                return False
+        else: 
+            mapping[a] = b
 
-        mappedFirst.add(a)
-        mappedSecond.add(b)
-    
     return True
-        
+    
 def result(arg1, arg2):
     if(checkMapping(arg1, arg2) == True):
         print("true")
